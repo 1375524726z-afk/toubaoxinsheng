@@ -16,11 +16,13 @@
       background: linear-gradient(180deg, #f3f7ff 0%, #f8fbff 100%);
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
       padding: 24px;
       color: #1f2633;
       position: relative;
+      gap: 14px;
     }
 
     .corner-carousel {
@@ -46,7 +48,7 @@
       flex-direction: column;
       gap: 6px;
       will-change: transform;
-      animation: noticeUp 15s linear infinite;
+      animation: noticeUp 10s linear infinite;
     }
 
     .notice-item {
@@ -89,14 +91,14 @@
 
     .module-wrap {
       width: min(980px, 92vw);
-      height: min(560px, 78vh);
+      height: min(390px, 54vh);
       background: #ffffff;
       border-radius: 20px;
       box-shadow: 0 10px 28px rgba(24, 57, 105, 0.12);
       padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 14px;
       overflow: hidden;
       position: relative;
     }
@@ -133,12 +135,14 @@
     }
 
     .track {
+      --card-gap: 10px;
+      --peek-size: 32px;
       flex: 1;
       overflow-x: hidden;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: var(--card-gap);
       padding-right: 4px;
       cursor: ns-resize;
       user-select: none;
@@ -155,26 +159,19 @@
       cursor: ns-resize;
     }
 
-    .voice-page {
-      height: calc(100% - 32px);
-      min-height: calc(100% - 32px);
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      padding: 2px 2px 8px;
-    }
-
     .voice-card {
       width: 100%;
-      height: calc((100% - 12px) / 2);
+      height: calc((100% - (2 * var(--card-gap)) - var(--peek-size)) / 2);
+      min-height: 0;
+      flex-shrink: 0;
       background: #fff;
       border-radius: 18px;
       border: 1px solid #edf1f7;
       padding: 14px 16px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 6px;
       box-shadow: 0 4px 14px rgba(15, 33, 72, 0.06);
       overflow: hidden;
     }
@@ -183,7 +180,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     .avatar {
@@ -212,30 +209,8 @@
       font-weight: 400;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       overflow: hidden;
-    }
-
-    .card-bottom {
-      margin-top: 10px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      font-size: 18px;
-      padding: 6px 10px;
-      border-radius: 10px;
-      background: #fff3ec;
-      color: #3a2f2b;
-      font-weight: 600;
-      white-space: nowrap;
-      max-width: 66%;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     .tips {
@@ -246,10 +221,165 @@
       letter-spacing: 0.2px;
     }
 
+    .benefit-wrap {
+      width: min(980px, 92vw);
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(24, 57, 105, 0.1);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .plan-panel {
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid #eef2f8;
+      padding: 12px;
+    }
+
+    .plan-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .plan-title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e2635;
+    }
+
+    .plan-more {
+      color: #9ca8bd;
+      font-size: 16px;
+    }
+
+    .plan-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #2a3447;
+      padding: 4px 0;
+      gap: 12px;
+    }
+
+    .plan-row strong {
+      flex-shrink: 0;
+      font-size: 17px;
+      color: #3d4657;
+    }
+
+    .plan-expand {
+      text-align: center;
+      margin-top: 4px;
+      color: #ff822f;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .reason-panel {
+      border-radius: 18px;
+      border: 1px solid #ffe2cf;
+      background: linear-gradient(180deg, #fffdfb 0%, #fff8f1 100%);
+      padding: 14px 12px 12px;
+    }
+
+    .reason-title {
+      margin: 0;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1f2737;
+    }
+
+    .reason-title em {
+      font-style: normal;
+      color: #ff842e;
+    }
+
+    .reason-banner {
+      margin: 10px auto 12px;
+      width: fit-content;
+      min-width: 230px;
+      text-align: center;
+      padding: 6px 12px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #ff9e46 0%, #ff7f24 100%);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .reason-icons {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .reason-item {
+      text-align: center;
+      color: #2d3648;
+    }
+
+    .reason-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      margin: 0 auto 6px;
+      background: #fff1e6;
+      color: #ff8a2f;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 26px;
+    }
+
+    .reason-item b {
+      display: block;
+      font-size: 24px;
+      line-height: 1.2;
+      color: #ff7f22;
+    }
+
+    .reason-item span {
+      display: block;
+      font-size: 14px;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
+    .reason-footer {
+      text-align: center;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #ff9f48 0%, #ff7d22 100%);
+      color: #fff;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .reason-footer em {
+      font-style: normal;
+      font-size: 34px;
+    }
+
     @media (max-width: 900px) {
       .module-wrap {
         padding: 18px;
-        height: min(560px, 84vh);
+        height: min(370px, 50vh);
+        gap: 12px;
+      }
+
+      .benefit-wrap {
+        padding: 12px;
       }
 
       .corner-carousel {
@@ -287,18 +417,16 @@
 
       .voice-card {
         padding: 12px;
+        gap: 5px;
       }
 
       .quote {
         font-size: 16px;
+        -webkit-line-clamp: 3;
       }
 
       .name {
         font-size: 16px;
-      }
-
-      .tag {
-        font-size: 14px;
       }
 
     }
@@ -311,10 +439,67 @@
 
       .module-wrap {
         width: min(100%, 440px);
-        height: min(78vh, 620px);
+        height: min(390px, 48vh);
         border-radius: 16px;
         padding: 14px;
-        gap: 12px;
+        gap: 10px;
+      }
+
+      .benefit-wrap {
+        width: min(100%, 440px);
+        border-radius: 14px;
+        padding: 10px;
+      }
+
+      .plan-title {
+        font-size: 17px;
+      }
+
+      .plan-more {
+        font-size: 14px;
+      }
+
+      .plan-row {
+        font-size: 14px;
+      }
+
+      .plan-row strong {
+        font-size: 16px;
+      }
+
+      .plan-expand {
+        font-size: 14px;
+      }
+
+      .reason-title {
+        font-size: 16px;
+      }
+
+      .reason-banner {
+        min-width: 190px;
+        font-size: 14px;
+      }
+
+      .reason-badge {
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+      }
+
+      .reason-item b {
+        font-size: 19px;
+      }
+
+      .reason-item span {
+        font-size: 12px;
+      }
+
+      .reason-footer {
+        font-size: 22px;
+      }
+
+      .reason-footer em {
+        font-size: 28px;
       }
 
       .corner-carousel {
@@ -353,22 +538,16 @@
         font-size: 12px;
       }
 
-      .voice-page {
-        height: calc(100% - 32px);
-        min-height: calc(100% - 32px);
-        gap: 8px;
-        padding: 2px 1px 6px;
-      }
-
       .voice-card {
-        height: calc((100% - 8px) / 2);
+        height: calc((100% - (2 * var(--card-gap)) - var(--peek-size)) / 2);
         padding: 10px;
         border-radius: 14px;
+        gap: 4px;
       }
 
       .user-row {
         gap: 7px;
-        margin-bottom: 6px;
+        margin-bottom: 10px;
       }
 
       .avatar {
@@ -385,16 +564,6 @@
         font-size: 14px;
         line-height: 1.35;
         -webkit-line-clamp: 3;
-      }
-
-      .card-bottom {
-        margin-top: 8px;
-        gap: 6px;
-      }
-
-      .tag {
-        font-size: 12px;
-        padding: 4px 8px;
       }
 
       .tips {
@@ -420,6 +589,54 @@
 
     <div class="track" id="voiceTrack"></div>
     <p class="tips">上滑查看更多真实心声</p>
+  </section>
+
+  <section class="benefit-wrap" aria-label="保障计划与产品优势">
+    <div class="plan-panel">
+      <div class="plan-header">
+        <h3 class="plan-title">保障计划</h3>
+        <span class="plan-more">保障详情 &gt;</span>
+      </div>
+      <div class="plan-row">
+        <span>住院医疗保险金(含医保外费用)</span>
+        <strong>400万</strong>
+      </div>
+      <div class="plan-row">
+        <span>质子重离子医疗保险金</span>
+        <strong>200万</strong>
+      </div>
+      <div class="plan-row">
+        <span>外购药品及外购器械费用保险金</span>
+        <strong>200万</strong>
+      </div>
+      <div class="plan-expand">展开保障计划 ⌄</div>
+    </div>
+
+    <div class="reason-panel">
+      <h3 class="reason-title">为什么选择<em>看病保·免健告医疗险</em>?</h3>
+      <div class="reason-banner">1 张保单 解决 3 大难题</div>
+      <div class="reason-icons">
+        <div class="reason-item">
+          <div class="reason-badge">+</div>
+          <b>可买</b>
+          <span>无健康告知</span>
+          <span>带病人群也可买</span>
+        </div>
+        <div class="reason-item">
+          <div class="reason-badge">¥</div>
+          <b>可赔</b>
+          <span>一般既往症</span>
+          <span>责任内可赔</span>
+        </div>
+        <div class="reason-item">
+          <div class="reason-badge">✓</div>
+          <b>可续</b>
+          <span>保证续保</span>
+          <span>生病/理赔可续保</span>
+        </div>
+      </div>
+      <div class="reason-footer">最高保障<em>1000万</em></div>
+    </div>
   </section>
 
   <script>
@@ -458,107 +675,79 @@
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Amy",
         name: "saud...",
-        quote: "有结节的老妈居然也能买！看中特需病房和一些比较贵的特效药也能报销。",
-        tag: "为55岁的爸妈投保"
+        quote: "有结节的老妈居然也能买！看中特需病房和一些比较贵的特效药也能报销。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Leo",
         name: "大喜聊保...",
-        quote: "保额够覆盖国际部费用就行，看到国家创新药也覆盖，将来看病总归更放心。",
-        tag: "为52岁的爸妈投保"
+        quote: "保额够覆盖国际部费用就行，看到国家创新药也覆盖，将来看病总归更放心。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Ivy",
         name: "阿晴的保险笔记",
-        quote: "最看重门急诊和住院都能协同理赔，不用来回补材料，体验比想象中顺畅。",
-        tag: "给全家做保障"
+        quote: "最看重门急诊和住院都能协同理赔，不用来回补材料，体验比想象中顺畅。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=David",
         name: "老周懂保险",
-        quote: "父母年龄偏大还能核保通过，责任也比较实在，买完这份心里踏实很多。",
-        tag: "给58岁父亲投保"
+        quote: "父母年龄偏大还能核保通过，责任也比较实在，买完这份心里踏实很多。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Mia",
         name: "mimi规划中",
-        quote: "保单条款写得很清楚，客服解释也耐心，第一次自己给爸妈配置保险没踩坑。",
-        tag: "首次给父母投保"
+        quote: "保单条款写得很清楚，客服解释也耐心，第一次自己给爸妈配置保险没踩坑。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Olive",
         name: "橄榄树下",
-        quote: "异地就医支持范围很友好，爸妈在老家看病也能理赔，不用担心城市限制。",
-        tag: "跨城家庭适用"
+        quote: "异地就医支持范围很友好，爸妈在老家看病也能理赔，不用担心城市限制。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=River",
         name: "river爱记录",
-        quote: "增值服务里陪诊和重疾绿通都很实用，关键时刻真的省下很多沟通成本。",
-        tag: "看中就医服务"
+        quote: "增值服务里陪诊和重疾绿通都很实用，关键时刻真的省下很多沟通成本。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Coco",
         name: "可可说保障",
-        quote: "给自己和爱人一起买后保费还在预算内，保障责任比我们以前那份全面不少。",
-        tag: "夫妻双保单"
+        quote: "给自己和爱人一起买后保费还在预算内，保障责任比我们以前那份全面不少。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Allen",
         name: "保研所",
-        quote: "对慢病人群友好是我选它的核心原因，家里老人能顺利上车已经很难得。",
-        tag: "慢病家庭优先"
+        quote: "对慢病人群友好是我选它的核心原因，家里老人能顺利上车已经很难得。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Yuki",
         name: "Yuki保险本",
-        quote: "看了很多产品后，最终还是觉得这款赔付逻辑更清楚，后续续保规则也透明。",
-        tag: "注重长期保障"
+        quote: "看了很多产品后，最终还是觉得这款赔付逻辑更清楚，后续续保规则也透明。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Milo",
         name: "米洛规划师",
-        quote: "本来担心理赔会拖，实际线上提交资料后反馈挺快，效率明显高于预期。",
-        tag: "理赔体验友好"
+        quote: "本来担心理赔会拖，实际线上提交资料后反馈挺快，效率明显高于预期。"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Nina",
         name: "nina爱生活",
-        quote: "预算有限也能搭出不错的保障组合，保费可控，给爸妈多了一层稳定后盾。",
-        tag: "高性价比投保"
+        quote: "预算有限也能搭出不错的保障组合，保费可控，给爸妈多了一层稳定后盾。"
       }
     ];
 
     const track = document.getElementById("voiceTrack");
 
-    const pages = [];
-    for (let i = 0; i < voiceList.length; i += 2) {
-      pages.push(voiceList.slice(i, i + 2));
-    }
-
-    track.innerHTML = pages
+    track.innerHTML = voiceList
       .map(
-        (pageItems) => `
-          <div class="voice-page">
-            ${pageItems
-              .map(
-                (item) => `
-                  <article class="voice-card">
-                    <div>
-                      <div class="user-row">
-                        <img class="avatar" src="${item.avatar}" alt="${item.name}" />
-                        <span class="name">${item.name}</span>
-                      </div>
-                      <p class="quote">“${item.quote}”</p>
-                    </div>
-                    <div class="card-bottom">
-                      <span class="tag">${item.tag}</span>
-                    </div>
-                  </article>
-                `
-              )
-              .join("")}
-          </div>
+        (item) => `
+          <article class="voice-card">
+            <div>
+              <div class="user-row">
+                <img class="avatar" src="${item.avatar}" alt="${item.name}" />
+                <span class="name">${item.name}</span>
+              </div>
+              <p class="quote">“${item.quote}”</p>
+            </div>
+          </article>
         `
       )
       .join("");
