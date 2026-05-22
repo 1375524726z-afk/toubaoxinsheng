@@ -221,7 +221,7 @@
     .card-bottom {
       margin-top: 10px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
@@ -238,14 +238,6 @@
       max-width: 66%;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-
-    .likes {
-      font-size: 20px;
-      color: #445166;
-      font-weight: 600;
-      white-space: nowrap;
-      flex-shrink: 0;
     }
 
     .tips {
@@ -311,9 +303,6 @@
         font-size: 14px;
       }
 
-      .likes {
-        font-size: 15px;
-      }
     }
 
     @media (max-width: 600px) {
@@ -403,16 +392,11 @@
       .card-bottom {
         margin-top: 8px;
         gap: 6px;
-        flex-wrap: nowrap;
       }
 
       .tag {
         font-size: 12px;
         padding: 4px 8px;
-      }
-
-      .likes {
-        font-size: 12px;
       }
 
       .tips {
@@ -477,85 +461,73 @@
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Amy",
         name: "saud...",
         quote: "有结节的老妈居然也能买！看中特需病房和一些比较贵的特效药也能报销。",
-        tag: "为55岁的爸妈投保",
-        likes: 2521
+        tag: "为55岁的爸妈投保"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Leo",
         name: "大喜聊保...",
         quote: "保额够覆盖国际部费用就行，看到国家创新药也覆盖，将来看病总归更放心。",
-        tag: "为52岁的爸妈投保",
-        likes: 1880
+        tag: "为52岁的爸妈投保"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Ivy",
         name: "阿晴的保险笔记",
         quote: "最看重门急诊和住院都能协同理赔，不用来回补材料，体验比想象中顺畅。",
-        tag: "给全家做保障",
-        likes: 1642
+        tag: "给全家做保障"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=David",
         name: "老周懂保险",
         quote: "父母年龄偏大还能核保通过，责任也比较实在，买完这份心里踏实很多。",
-        tag: "给58岁父亲投保",
-        likes: 1725
+        tag: "给58岁父亲投保"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Mia",
         name: "mimi规划中",
         quote: "保单条款写得很清楚，客服解释也耐心，第一次自己给爸妈配置保险没踩坑。",
-        tag: "首次给父母投保",
-        likes: 1396
+        tag: "首次给父母投保"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Olive",
         name: "橄榄树下",
         quote: "异地就医支持范围很友好，爸妈在老家看病也能理赔，不用担心城市限制。",
-        tag: "跨城家庭适用",
-        likes: 1472
+        tag: "跨城家庭适用"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=River",
         name: "river爱记录",
         quote: "增值服务里陪诊和重疾绿通都很实用，关键时刻真的省下很多沟通成本。",
-        tag: "看中就医服务",
-        likes: 1538
+        tag: "看中就医服务"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Coco",
         name: "可可说保障",
         quote: "给自己和爱人一起买后保费还在预算内，保障责任比我们以前那份全面不少。",
-        tag: "夫妻双保单",
-        likes: 1314
+        tag: "夫妻双保单"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Allen",
         name: "保研所",
         quote: "对慢病人群友好是我选它的核心原因，家里老人能顺利上车已经很难得。",
-        tag: "慢病家庭优先",
-        likes: 1597
+        tag: "慢病家庭优先"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Yuki",
         name: "Yuki保险本",
         quote: "看了很多产品后，最终还是觉得这款赔付逻辑更清楚，后续续保规则也透明。",
-        tag: "注重长期保障",
-        likes: 1449
+        tag: "注重长期保障"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Milo",
         name: "米洛规划师",
         quote: "本来担心理赔会拖，实际线上提交资料后反馈挺快，效率明显高于预期。",
-        tag: "理赔体验友好",
-        likes: 1368
+        tag: "理赔体验友好"
       },
       {
         avatar: "https://api.dicebear.com/9.x/thumbs/svg?seed=Nina",
         name: "nina爱生活",
         quote: "预算有限也能搭出不错的保障组合，保费可控，给爸妈多了一层稳定后盾。",
-        tag: "高性价比投保",
-        likes: 1491
+        tag: "高性价比投保"
       }
     ];
 
@@ -583,7 +555,6 @@
                     </div>
                     <div class="card-bottom">
                       <span class="tag">${item.tag}</span>
-                      <span class="likes">👍 有用 ${item.likes}</span>
                     </div>
                   </article>
                 `
